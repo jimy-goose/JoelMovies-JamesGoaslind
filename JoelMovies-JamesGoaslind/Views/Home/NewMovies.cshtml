@@ -1,14 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Submit Movies";
 }
-@model JoelMovies_JamesGoaslind.Models.NewMovie
+@model JoelMovies_JamesGoaslind.Models.Movie
 <h1>@ViewData["Title"]</h1>
 
 <!--This is where poeple enter the information-->
-<form method="post">
-    <label asp-for="Category">Category:</label><br>
-    <input asp-for="Category"><br>
-    <span asp-validation-for="Category" class="text-danger"></span><br />
+<form method="post">  
+
+    <input type="hidden" asp-for="MovieId" /><br />
+
+    <select asp-for="CategoryId">
+        <option value="">Select Category</option>
+        @foreach(Category c in ViewBag.Category)
+        {
+            <option value="@c.CategoryId">@c.CategoryName</option>
+        }
+    </select>
+    <span asp-validation-for="CategoryId" class="text-danger"></span><br />
     <label asp-for="Title">Title:</label><br>
     <input asp-for="Title"><br>
     <span asp-validation-for="Title" class="text-danger"></span><br />
@@ -29,12 +37,16 @@
     <span asp-validation-for="Rating" class="text-danger"></span><br />
     <label asp-for="Edited">Edited:</label><br>
     <select asp-for="Edited">
-        <option value="">Select an option</option>
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select><br /><br />
-    <label asp-for="Lent_To">Lent To:</label><br>
-    <input asp-for="Lent_To"><br><br>
+    <label asp-for="LentTo">Lent To:</label><br>
+    <input asp-for="LentTo"><br><br />
+    <label asp-for="CopiedToPlex">CopiedToPlex:</label><br>
+    <select asp-for="CopiedToPlex">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select><br /><br />
     <label asp-for="Notes">Notes:</label><br>
     <input asp-for="Notes"><br><br>
     <input type="submit" value="Submit">

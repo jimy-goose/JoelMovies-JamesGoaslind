@@ -21,9 +21,9 @@ namespace JoelMovies_JamesGoaslind.Migrations
                     Year = table.Column<int>(type: "INTEGER", nullable: false),
                     Director = table.Column<string>(type: "TEXT", nullable: false),
                     Rating = table.Column<string>(type: "TEXT", nullable: false),
-                    Edited = table.Column<bool>(type: "INTEGER", nullable: true),// Can be null
-                    Lent_To = table.Column<string>(type: "TEXT", nullable: true), // Can be null
-                    Notes = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true) // can be null
+                    Edited = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Lent_To = table.Column<string>(type: "TEXT", nullable: true),
+                    Notes = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true)
                 },
                 constraints: table =>
                 {

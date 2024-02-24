@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoelMovies_JamesGoaslind.Migrations
 {
-    [DbContext(typeof(NewMovieContext))]
+    [DbContext(typeof(MovieContext))]
     partial class NewMovieContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
