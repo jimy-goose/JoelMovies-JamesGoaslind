@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoelMovies_JamesGoaslind.Migrations
 {
-    [DbContext(typeof(NewMovieContext))]
+    [DbContext(typeof(MovieContext))]
     [Migration("20240216204353_Initial1")]
     partial class Initial1
     {
